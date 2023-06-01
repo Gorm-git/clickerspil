@@ -73,23 +73,60 @@
           </div>
         </div>
 
-        <div id="game_foreground"></div>
-
         <div id="game_ui">
           <div id="scoreBoard">
-            <img id="" src="" />
+            <span id="zombie_kills">0</span>
+            <img id="dead_zombie" src="ZombieSprites/zombieDead1.png" />
           </div>
           <div id="lifeBoard">
-            <img id="" src="" />
+            <img
+              id="heart0"
+              src="HUD/hud_heartFull1.png"
+              class="aktive_heart"
+            />
+            <img
+              id="heart1"
+              src="HUD/hud_heartFull1.png"
+              class="aktive_heart"
+            />
+            <img
+              id="heart2"
+              src="HUD/hud_heartFull1.png"
+              class="aktive_heart"
+            />
           </div>
           <div id="timeBoard">
-            <img id="" src="" />
+            <div id="time_container">
+              <div id="time_sprite"></div>
+            </div>
           </div>
         </div>
       </div>
-      <div id="start" class="hidden"></div>
-      <div id="gameOver" class="hidden"></div>
-      <div id="levelComplete" class="hidden"></div>
+      <div id="start" class="hidden">
+        <h2>Welcome to ZombieClick</h2>
+        <p>
+          Kill 20 zombies before the timer runs out and help safe humanity from
+          the zombie virus
+        </p>
+        <button id="btn_start" class="pulse">START BLASTING</button>
+      </div>
+      <div id="gameOver" class="hidden">
+        <h2>YOU LOST</h2>
+        <p>
+          You only killed <span id="game_over_zombies">x</span> zombies....
+          PATHETIC
+        </p>
+        <p>You'll have to kill more to safe humanity</p>
+        <button id="btn_restart" class="pulse">Try again?</button>
+      </div>
+      <div id="levelComplete" class="hidden">
+        <h2>You killed enough zombies... for now</h2>
+        <p>
+          You killed <span id="level_complete_coins">x</span> zombies. Is that
+          really all you got?
+        </p>
+        <button id="btn_try_again" class="pulse">I can do better!</button>
+      </div>
     </div>
   </body>
 </html>
