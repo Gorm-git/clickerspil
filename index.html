@@ -7,42 +7,89 @@
     <title>Zombiespillet</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <main id="game">
-    <body>
-      <div id="screen">
-        <div id="game">
-          <div id="game_background"></div>
 
-          <div id="game_elements"></div>
+  <body>
+    <div id="screen">
+      <div id="game">
+        <div id="game_background"></div>
 
-          <div id="zombieContainer1"><img id="" src="""></div>
-          <div id="zombieContainer2"><img id="" src="""></div>
-          <div id="zombieContainer3"><img id="" src="""></div>
-          <div id="zombieContainer4"><img id="" src="""></div>
+        <div id="game_elements">
+          <div id="zombieContainer1">
+            <img
+              id="zombie1_sprite"
+              src="./ZombieSprites/zombie1.png"
+              alt="zombie"
+            />
+          </div>
+          <div id="zombieContainer2">
+            <img
+              id="zombie2_sprite"
+              src="./ZombieSprites/zombie2.png"
+              alt="zombie"
+            />
+          </div>
+          <div id="zombieContainer3">
+            <img
+              id="zombie3_sprite"
+              src="./ZombieSprites/zombie3.png"
+              alt="zombie"
+            />
+          </div>
+          <div id="zombieContainer4">
+            <img
+              id="zombie4_sprite"
+              src="./ZombieSprites/zombie4.png"
+              alt="zombie"
+            />
+          </div>
 
-          <div id="soldierContainer1"><img id="" src="""></div>
-          <div id="soldierContainer2"><img id="" src="""></div>
-          <div id="soldierContainer3"><img id="" src="""></div>
-          <div id="soldierContainer4"><img id="" src="""></div>
-
-          <div id="game_foreground"></div>
-
-          <div id="game_ui">
-            <div id="scoreBoard">
-              <img id="" src="" />
-            </div>
-            <div id="lifeBoard">
-              <img id="" src="" />
-            </div>
-            <div id="timeBoard">
-              <img id="" src="" />
-            </div>
+          <div id="soldierContainer1">
+            <img
+              id="soldier1_sprite"
+              src="./SoldierSprites/solder1.png"
+              alt="soldier"
+            />
+          </div>
+          <div id="soldierContainer2">
+            <img
+              id="soldier2_sprite"
+              src="./SoldierSprites/soldier2.png"
+              alt="soldier"
+            />
+          </div>
+          <div id="soldierContainer3">
+            <img
+              id="soldier3_sprite"
+              src="./SoldierSprites/soldier3.png"
+              alt="soldier"
+            />
+          </div>
+          <div id="soldierContainer4">
+            <img
+              id="soldier4_sprite"
+              src="./SoldierSprites/soldier4.png"
+              alt="soldier"
+            />
           </div>
         </div>
-        <div id="start"></div>
-        <div id="gameOver"></div>
-        <div id="levelComplete"></div>
+
+        <div id="game_foreground"></div>
+
+        <div id="game_ui">
+          <div id="scoreBoard">
+            <img id="" src="" />
+          </div>
+          <div id="lifeBoard">
+            <img id="" src="" />
+          </div>
+          <div id="timeBoard">
+            <img id="" src="" />
+          </div>
+        </div>
       </div>
-    </body>
-  </main>
+      <div id="start" class="hidden"></div>
+      <div id="gameOver" class="hidden"></div>
+      <div id="levelComplete" class="hidden"></div>
+    </div>
+  </body>
 </html>

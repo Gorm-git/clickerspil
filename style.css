@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+#screen {
+  width: 100%;
+  display: grid;
+  aspect-ratio: 16/9;
+  cursor: pointer;
+  grid-template: 100% / 100%;
+}
+
+#game {
+  grid-area: 1 / 1;
+  display: grid;
+  grid-template: 100% / 100%;
+}
+
+#game_background {
+  grid-area: 1 / 1;
+  background-image: url(Background/WarWasteland.png);
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+#game_elements  {
+  grid-area: 1 / 1;
+  overflow: hidden;
+  position: relative;
+}
+
+#game_elements {
+  overflow: hidden;
+}
+
+#
