@@ -42,9 +42,64 @@ p {
 
 #game_elements {
   grid-area: 1 / 1;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 
-.hidden,
-#game;
+/* GAME UI = SCOREBOARD, HEARTS, TIMEBOARD,  */
+
+#game_ui_lifeBoard {
+  overflow: hidden;
+  position: absolute;
+  left: 2vw;
+  top: 0vw;
+  pointer-events: none;
+  color: brown;
+  font-size: 1em;
+}
+
+#lifeBoard {
+  display: grid;
+  margin-block-start: 0.5em;
+  grid-template-columns: 3.3em 3.3em 3.3em;
+}
+
+#game_ui_scoreBoard {
+  overflow: hidden;
+  position: absolute;
+  right: 2vw;
+  top: 0vw;
+  pointer-events: none;
+  color: brown;
+  font-size: 2em;
+}
+
+#scoreBoard {
+  /* right: 2vw;
+  top: 0vw; */
+  display: grid;
+  gap: 0.4em;
+  justify-items: end;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  align-items: center;
+}
+
+#game_ui_timeBoard {
+  overflow: hidden;
+  position: absolute;
+  right: 70%;
+  top: 0vw;
+  pointer-events: none;
+  color: brown;
+  font-size: 2em;
+}
+
+#timeBoard {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-block-start: 0.5em;
+}
+
+/* .hidden,
+#game; */
