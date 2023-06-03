@@ -6,6 +6,13 @@ body {
 /* img {
   width: 100%;
 } */
+
+h1 {
+  font-size: 5em;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
 h2 {
   font-size: 3em;
   margin: 0;
@@ -14,12 +21,11 @@ h2 {
 
 p {
   text-align: center;
-  font-size: 1.2em;
+  font-size: 2.2em;
   margin: 2em 0;
 }
 
 #screen {
-  width: 100%;
   display: grid;
   aspect-ratio: 16/9;
   cursor: pointer;
@@ -127,7 +133,7 @@ p {
   animation-duration: 30s;
 }
 
-@keyframes shrink_kf {
+@keyframes fill_kf {
   0% {
     scale: 1 1;
     background-color: rgb(244, 244, 244);
@@ -140,5 +146,83 @@ p {
     background-color: red;
   }
 }
-/* .hidden,
-#game; */
+
+/* --------START - GAMELOST - LEVELCOMPLETE */
+
+#start {
+  aspect-ratio: 16/9;
+  grid-area: 1 /1;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-image: url(Background/BackgroundStart.jpg);
+  color: whitesmoke;
+}
+
+#gameOver {
+  aspect-ratio: 16/9;
+  grid-area: 1 / 1;
+  z-index: 999;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  background-image: url(Background/backgroundLost.png);
+  color: whitesmoke;
+}
+
+#levelComplete {
+  aspect-ratio: 16/9;
+  grid-area: 1/1;
+  z-index: 999;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  background-image: url(Background/backgroundWIN.png);
+  color: gold;
+}
+
+.hidden,
+#gameOver.hidden,
+#levelComplete.hidden,
+#game.hidden,
+#start.hidden {
+  display: none;
+}
+
+button {
+  padding: 0.25em 0.8em;
+  font-size: 2.5em;
+  margin: auto;
+  background-color: red;
+  color: rgb(241, 241, 241);
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+button:hover {
+  animation-name: chaosButton_kf;
+  animation-duration: 0.08s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes chaosButton_kf {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(4px, 4px) rotate(4deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0eg);
+  }
+  75% {
+    transform: translate(-4px, 4px) rotate(-4deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* ----------Zombie and human containers------------ */
