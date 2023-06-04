@@ -57,6 +57,54 @@ p {
   cursor: crosshair;
 }
 
+#zombieContainer1 {
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+}
+
+#zombieContainer2 {
+  position: absolute;
+  /* left: 12%; */
+  bottom: 12%;
+}
+
+#zombieContainer3 {
+  position: absolute;
+  /* left: 8%; */
+  bottom: 8%;
+}
+
+#zombieContainer4 {
+  position: absolute;
+  /* left: 6%; */
+  bottom: 6%;
+}
+
+#soldierContainer1 {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+}
+
+#soldierContainer2 {
+  position: absolute;
+  /* left: 7%; */
+  bottom: 7%;
+}
+
+#soldierContainer3 {
+  position: absolute;
+  /* left: 9%; */
+  bottom: 9%;
+}
+
+#soldierContainer4 {
+  position: absolute;
+  /* left: 6%; */
+  bottom: 6%;
+}
+
 /* GAME UI = SCOREBOARD, HEARTS, TIMEBOARD,  */
 
 #game_ui_lifeBoard {
@@ -73,6 +121,13 @@ p {
   display: grid;
   margin-block-start: 0.5em;
   grid-template-columns: 3.3em 3.3em 3.3em;
+}
+
+.active_heart {
+  filter: drop-shadow(0 0 1.5px rgb(224, 126, 108));
+}
+.lost_heart {
+  filter: url(HUD/hud_heartEmpty1.png);
 }
 
 #game_ui_scoreBoard {
@@ -127,7 +182,7 @@ p {
 /* --------Time sprite animation------------ */
 .fill {
   animation-name: fill_kf;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-duration: 30s;
@@ -225,4 +280,5 @@ button:hover {
   }
 }
 
-/* ----------Zombie and human containers------------ */
+/* ----------Zombie and human containers------------
+ */
