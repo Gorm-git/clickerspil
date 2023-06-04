@@ -59,52 +59,133 @@ p {
 
 #zombieContainer1 {
   position: absolute;
-  left: 10%;
-  bottom: 10%;
+  left: 0;
 }
 
 #zombieContainer2 {
   position: absolute;
-  /* left: 12%; */
-  bottom: 12%;
+  left: 0;
 }
 
 #zombieContainer3 {
   position: absolute;
-  /* left: 8%; */
-  bottom: 8%;
+  left: 0;
 }
 
 #zombieContainer4 {
   position: absolute;
-  /* left: 6%; */
-  bottom: 6%;
+  left: 0;
 }
 
 #soldierContainer1 {
   position: absolute;
-  left: 5%;
-  bottom: 5%;
+  left: 0;
 }
 
 #soldierContainer2 {
   position: absolute;
-  /* left: 7%; */
-  bottom: 7%;
+  left: 0;
 }
 
 #soldierContainer3 {
   position: absolute;
-  /* left: 9%; */
-  bottom: 9%;
+  left: 0;
 }
 
 #soldierContainer4 {
   position: absolute;
-  /* left: 6%; */
+  left: 0;
+}
+
+.position1 {
   bottom: 6%;
 }
 
+.position2 {
+  bottom: 8%;
+}
+
+.position3 {
+  bottom: 10%;
+}
+
+.position4 {
+  bottom: 12%;
+}
+
+.position5 {
+  bottom: 5%;
+}
+
+.position6 {
+  bottom: 7%;
+}
+
+.position7 {
+  bottom: 9%;
+}
+
+.position8 {
+  bottom: 11%;
+}
+
+.speed1 {
+  animation-duration: 5s;
+}
+
+.speed2 {
+  animation-duration: 4.5s;
+}
+
+.speed3 {
+  animation-duration: 4s;
+}
+
+.speed4 {
+  animation-duration: 3.5s;
+}
+
+.speed5 {
+  animation-duration: 3s;
+}
+
+.speed6 {
+  animation-duration: 2.5s;
+}
+
+/* ---------Sprite animationer --------------- */
+
+.run {
+  animation-name: run_kf;
+  animation-timing-function: linear;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes run_kf {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100vw + 100px);
+  }
+}
+
+.deadSprite {
+  animation-name: deadSprite_kf;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes deadSprite_kf {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(720deg) scale(0);
+  }
+}
 /* GAME UI = SCOREBOARD, HEARTS, TIMEBOARD,  */
 
 #game_ui_lifeBoard {
