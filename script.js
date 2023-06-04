@@ -12,7 +12,7 @@ function start() {
   document.querySelector("#btn_restart").addEventListener("click", runGame);
   document
     .querySelector("#btn_try_again")
-    .addEventListener("click", gameStartScreen);
+    .addEventListener("click", displayStartScreen);
 }
 
 function runGame() {
@@ -20,20 +20,74 @@ function runGame() {
   gameRunning = true;
   resetHearts();
   resetKills();
-  showGameScreen();
+  displayGameScreen();
+
+  startTheShow();
+
+  startTime();
 
   document.querySelector("#audio_game").play();
   document.querySelector("#audio_game").volume = 1;
   document.querySelector("#audio_game").currentTime = 0;
+
+  // mousedown reg
+  document
+    .querySelector("#zombieContainer1")
+    .addEventListener("mousedown", clickZombie);
+
+  document
+    .querySelector("#zombieContainer2")
+    .addEventListener("mousedown", clickZombie);
+
+  document
+    .querySelector("#zombieContainer3")
+    .addEventListener("mousedown", clickZombie);
+
+  document
+    .querySelector("#zombieContainer4")
+    .addEventListener("mousedown", clickZombie);
+
+  document
+    .querySelector("#soldierContainer1")
+    .addEventListener("mousedown", clickSoldier);
+
+  document
+    .querySelector("#soldierContainer2")
+    .addEventListener("mousedown", clickSoldier);
+
+  document
+    .querySelector("#soldierContainer3")
+    .addEventListener("mousedown", clickSoldier);
+
+  document
+    .querySelector("#soldierContainer4")
+    .addEventListener("mousedown", clickSoldier);
+
+  // restart animations
+  document
+    .querySelector("#coin1_container")
+    .addEventListener("animationiteration", restartRunning);
+  document
+    .querySelector("#coin2_container")
+    .addEventListener("animationiteration", restartRunning);
+  document
+    .querySelector("#coin3_container")
+    .addEventListener("animationiteration", restartRunning);
+  document
+    .querySelector("#bomb_container")
+    .addEventListener("animationiteration", restartRunning);
+  document
+    .querySelector("#heart_container")
+    .addEventListener("animationiteration", restartRunning);
 }
 
-function gameStartScreen() {
+function displayStartScreen() {
   document.querySelector("#start").classList.remove("hidden");
   document.querySelector("#game_over").classList.add("hidden");
   document.querySelector("#level_complete").classList.add("hidden");
 }
 
-function gameRunningScreen() {
+function displayRunningScreen() {
   document.querySelector("#start").classList.add("hidden");
   document.querySelector("#gameOver").classList.add("hidden");
   document.querySelector("#levelComplete").classList.add("hidden");
@@ -60,6 +114,9 @@ function heartLost() {
   console.log("Heart lost");
   showHeartLost();
   hearts--;
+  if (hearts === 0) {
+    gameLost;
+  }
 }
 
 function resetLives() {
