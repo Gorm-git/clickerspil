@@ -1,7 +1,7 @@
 "use strict";
 
 let kills = 0;
-let hearts = 0;
+let HP = 0;
 let gameRunning = false;
 
 window.addEventListener("load", start);
@@ -14,13 +14,13 @@ function start() {
     .querySelector("#btn_try_again")
     .addEventListener("click", displayStartScreen);
 }
-//The gamee is now running
+//The game is now running
 function runGame() {
   console.log("game is running");
   gameRunning = true;
-  resetHearts();
+  resetHP();
   resetKills();
-  displayGameScreen();
+  displayRunningScreen();
 
   startTheShow();
 
@@ -65,19 +65,28 @@ function runGame() {
 
   // restart animations
   document
-    .querySelector("#coin1_container")
+    .querySelector("#zombieContainer1")
     .addEventListener("animationiteration", restartRunning);
   document
-    .querySelector("#coin2_container")
+    .querySelector("#zombieContainer2")
     .addEventListener("animationiteration", restartRunning);
   document
-    .querySelector("#coin3_container")
+    .querySelector("#zombieContainer3")
     .addEventListener("animationiteration", restartRunning);
   document
-    .querySelector("#bomb_container")
+    .querySelector("#zombieContainer4")
     .addEventListener("animationiteration", restartRunning);
   document
-    .querySelector("#heart_container")
+    .querySelector("#soldierContainer1")
+    .addEventListener("animationiteration", restartRunning);
+  document
+    .querySelector("#soldierContainer2")
+    .addEventListener("animationiteration", restartRunning);
+  document
+    .querySelector("#soldierContainer3")
+    .addEventListener("animationiteration", restartRunning);
+  document
+    .querySelector("#soldierContainer4")
     .addEventListener("animationiteration", restartRunning);
 }
 
@@ -142,10 +151,14 @@ function clickSoldier() {
   document.querySelector("#audio_zombie4").currentTime = 0;
   document.querySelector("#audio_zombie4").play();
 
-  document.querySelector("audio_gunshot").currentTime = 0;
-  document.querySelector("audio_gunshot").play();
+  document.querySelector("#audio_gunshot").currentTime = 0;
+  document.querySelector("#audio_gunshot").play();
 
-  zombiesKilled();
+  heartLost();
+}
+
+function restartRunning() {
+  console.log;
 }
 
 function soldierGone() {
@@ -158,7 +171,7 @@ function soldierGone() {
 
   soldier.classList.remove("paused");
 
-  soldier.addEventListener("mousedown", clicksoldier);
+  soldier.addEventListener("mousedown", clickSoldier);
 }
 
 // Kills og liv
@@ -178,9 +191,9 @@ function zombiesKilled() {
   showKills();
 }
 
-function resetLives() {
+function resetHP() {
   console.log("Hearts have been reset");
-  hearts = 3;
+  Lives = 3;
   document.querySelector("#heart0").classList.remove("empty_heart");
   document.querySelector("#heart1").classList.remove("empty_heart");
   document.querySelector("#heart2").classList.remove("empty_heart");
@@ -200,7 +213,7 @@ function heartLost() {
 
 function showHeartLost() {
   document.querySelector("#heart" + lives).classList.remove("red_heart");
-  document.querySelector("#heart" + lives).classList.add("empty_heart");
+  document.querySelector("#heart" + hearts).classList.add("empty_heart");
 }
 
 function startTime() {
@@ -236,11 +249,12 @@ function startTheShow() {
 
 function noMoreTime() {
   console.log("No more time sunnyboy");
-
-  if (points >= 20) {
-    level_complete();
-  } else {
-    gameStopped();
+  if (gameRunning) {
+    if (kills >= 20) {
+      levelComplete();
+    } else {
+      gameLost();
+    }
   }
 }
 
@@ -296,7 +310,7 @@ function gameLost() {
   gameStopped();
 }
 
-function level_complete() {
+function levelComplete() {
   document.querySelector("#levelComplete").classList.remove("hidden");
   document.querySelector("#audio_win").play();
   gameStopped();

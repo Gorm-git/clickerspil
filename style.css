@@ -186,6 +186,10 @@ p {
     transform: rotate(720deg) scale(0);
   }
 }
+
+.paused {
+  animation-play-state: paused;
+}
 /* GAME UI = SCOREBOARD, HEARTS, TIMEBOARD,  */
 
 #game_ui_lifeBoard {
@@ -204,11 +208,11 @@ p {
   grid-template-columns: 3.3em 3.3em 3.3em;
 }
 
-.active_heart {
+.red_heart {
   filter: drop-shadow(0 0 1.5px rgb(224, 126, 108));
 }
-.lost_heart {
-  filter: url(HUD/hud_heartEmpty1.png);
+.empty_heart {
+  filter: grayscale(75%) blur(0.5px);
 }
 
 #game_ui_scoreBoard {
