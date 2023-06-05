@@ -93,6 +93,74 @@ function displayRunningScreen() {
   document.querySelector("#levelComplete").classList.add("hidden");
 }
 
+function clickZombie() {
+  console.log("Shoot Zombie");
+  // No more multi click
+  let zombie = this;
+  zombie.removeEventListener("mousedown", clickZombie);
+
+  zombie.classList.add("paused");
+
+  // deadsprite animation
+  zombie.querySelector("img").classList.add("deadSprite");
+
+  zombie.addEventListener("animationend", zombieGone);
+  document.querySelector("#audio_zombie4").currentTime = 0;
+  document.querySelector("#audio_zombie4").play();
+
+  document.querySelector("audio_gunshot").currentTime = 0;
+  document.querySelector("audio_gunshot").play();
+
+  zombiesKilled();
+}
+
+function zombieGone() {
+  console.log("Zombie died, tragic");
+  let zombie = this;
+
+  zombie.removeEventListener("animationend", zombieGone);
+
+  zombie.querySelector("img").classList.remove("deadSprite");
+
+  zombie.classList.remove("paused");
+
+  zombie.addEventListener("mousedown", clickZombie);
+}
+
+function clickSoldier() {
+  console.log("Shoot Zombie");
+  // No more multi click
+  let soldier = this;
+  soldier.removeEventListener("mousedown", clickSoldier);
+
+  soldier.classList.add("paused");
+
+  // deadsprite animation
+  soldier.querySelector("img").classList.add("deadSprite");
+
+  soldier.addEventListener("animationend", soldierGone);
+  document.querySelector("#audio_zombie4").currentTime = 0;
+  document.querySelector("#audio_zombie4").play();
+
+  document.querySelector("audio_gunshot").currentTime = 0;
+  document.querySelector("audio_gunshot").play();
+
+  zombiesKilled();
+}
+
+function soldierGone() {
+  console.log("Zombie died, tragic");
+  let soldier = this;
+
+  soldier.removeEventListener("animationend", soldierGone);
+
+  soldier.querySelector("img").classList.remove("deadSprite");
+
+  soldier.classList.remove("paused");
+
+  soldier.addEventListener("mousedown", clicksoldier);
+}
+
 // Kills og liv
 function resetKills() {
   kills = 0;
@@ -170,7 +238,7 @@ function noMoreTime() {
   console.log("No more time sunnyboy");
 
   if (points >= 20) {
-    levelComplete();
+    level_complete();
   } else {
     gameStopped();
   }
