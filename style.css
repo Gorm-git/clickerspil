@@ -25,6 +25,13 @@ p {
   margin: 2em 0;
 }
 
+* {
+  user-select: none;
+}
+img {
+  -webkit-user-drag: none;
+}
+
 #screen {
   display: grid;
   aspect-ratio: 16/9;
@@ -42,6 +49,7 @@ p {
 #game_background {
   grid-area: 1 / 1;
   background-image: url(Background/WarWasteland.png);
+  aspect-ratio: 16/9;
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -98,11 +106,11 @@ p {
 }
 
 .position1 {
-  bottom: 6%;
+  bottom: 2%;
 }
 
 .position2 {
-  bottom: 8%;
+  bottom: 6%;
 }
 
 .position3 {
@@ -110,23 +118,23 @@ p {
 }
 
 .position4 {
-  bottom: 12%;
+  bottom: 14%;
 }
 
 .position5 {
-  bottom: 5%;
+  bottom: 4%;
 }
 
 .position6 {
-  bottom: 7%;
+  bottom: 8%;
 }
 
 .position7 {
-  bottom: 9%;
+  bottom: 12%;
 }
 
 .position8 {
-  bottom: 11%;
+  bottom: 16%;
 }
 
 .speed1 {
@@ -134,7 +142,7 @@ p {
 }
 
 .speed2 {
-  animation-duration: 4.5s;
+  animation-duration: 6s;
 }
 
 .speed3 {
@@ -146,11 +154,19 @@ p {
 }
 
 .speed5 {
-  animation-duration: 3s;
+  animation-duration: 5.5s;
 }
 
 .speed6 {
-  animation-duration: 2.5s;
+  animation-duration: 4.5s;
+}
+
+.speed7 {
+  animation-duration: 6.5s;
+}
+
+.speed8 {
+  animation-duration: 7s;
 }
 
 /* ---------Sprite animationer --------------- */
@@ -158,13 +174,13 @@ p {
 .run {
   animation-name: run_kf;
   animation-timing-function: linear;
-  animation-duration: 4s;
+  /* animation-duration: 4s; */
   animation-iteration-count: infinite;
 }
 
 @keyframes run_kf {
   0% {
-    left: 0;
+    left: -5%;
   }
   100% {
     left: calc(100vw + 100px);
@@ -212,7 +228,7 @@ p {
   filter: drop-shadow(0 0 1.5px rgb(224, 126, 108));
 }
 .empty_heart {
-  filter: grayscale(75%) blur(0.5px);
+  filter: grayscale(99%) blur(0.1px);
 }
 
 #game_ui_scoreBoard {
@@ -275,14 +291,14 @@ p {
 
 @keyframes fill_kf {
   0% {
-    scale: 1 1;
+    scale: 0 1;
     background-color: rgb(244, 244, 244);
   }
   50% {
     background-color: rgb(255, 126, 126);
   }
   100% {
-    scale: 0 1;
+    scale: 1 1;
     background-color: red;
   }
 }
